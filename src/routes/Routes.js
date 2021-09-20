@@ -1,4 +1,6 @@
+import { useContext } from 'react';
 import { Route, Redirect} from 'react-router-dom';
+import { AuthContext } from '../contexts/auth';
 
 //passando pelas props um componente, se é privada ou não e o resto do react-router
 export default function RouteWrapper({
@@ -6,8 +8,8 @@ export default function RouteWrapper({
     isPrivate,
     ...rest
 }){
-    const loading = false;
-    const signed = false;
+    const { signed, loading } = useContext(AuthContext);
+
 
     if(loading){
         return(
