@@ -50,7 +50,7 @@ export default function AuthProvider({ children }){
     };
 
 
-    //Cadastrando usuário
+    //Cadastrando usuário, *** primeiro passo
     async function signUp(email,password,nome){
         setLoadingAuth(true);
       
@@ -84,6 +84,7 @@ export default function AuthProvider({ children }){
         localStorage.setItem('SistemaUser', JSON.stringify(data))
     }
 
+    //Deslogando usuário
     async function signOut(){
         await firebase.auth().signOut();
         localStorage.removeItem('SistemaUser');
