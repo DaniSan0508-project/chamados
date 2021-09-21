@@ -4,6 +4,7 @@
     import SignIn from '../pages/SignIn';
     import SignUp from '../pages/SignUp';
     import Dashboard from '../pages/Dashboard';
+    import Customres from '../pages/Customers';
 
     export default function Routes(){
         return(
@@ -12,6 +13,7 @@
                 <Route component={SignUp} path="/register" exact/>
                 <Route component={Dashboard} path="/dashboard" exact isPrivate  />
                 <Route component={Profile} path="/profile" exact isPrivate />
+                <Route component={Customres} path="/customers" exact isPrivate/>
             </Switch>
         )
     }
