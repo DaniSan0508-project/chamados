@@ -5,6 +5,7 @@
     import SignUp from '../pages/SignUp';
     import Dashboard from '../pages/Dashboard';
     import Customres from '../pages/Customers';
+    import New from '../pages/New';
 
     export default function Routes(){
         return(
@@ -14,6 +15,7 @@
                 <Route component={Dashboard} path="/dashboard" exact isPrivate  />
                 <Route component={Profile} path="/profile" exact isPrivate />
                 <Route component={Customres} path="/customers" exact isPrivate/>
+                <Route component={New} path="/new" exact isPrivate/>
             </Switch>
         )
     }
