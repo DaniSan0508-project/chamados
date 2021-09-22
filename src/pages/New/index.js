@@ -54,9 +54,28 @@ export default function New(){
         loadCustomers();
     },[])
 
-    function handleRegister(e){
+//depois de pegar todos os dados tratados abaixo, criar novo chamado 
+    async function handleRegister(e){
         e.preventDefault();
-        alert('teste')
+      await firebase.firestore().collection('chamados')
+      .add({
+          created: new Date(),
+          cliente: customers[customerSelected].nomeFantasia,
+          clienteId: customers[customerSelected].id,
+          assunto: assunto,
+          status:status,
+          complemento: complemento,
+          userId: user.uid,
+      })
+      .then(()=>{
+        alert('Chamado criado com sucesso!')
+        setComplemento('')
+        setCustomerSelected(0)
+      })
+      .catch((error)=>{
+          alert('Ops, erro ao registrar, tente mais tarde...')
+        console.log(error)
+      })
     }
 //chama qnd troca assunto
     function handleChangeSelect(e){
