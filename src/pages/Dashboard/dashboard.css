@@ -67,6 +67,16 @@ table td .badge {
     border-radius: 3px;
     color: #fff;
 }
+.btn-more{
+    margin: 1.5em 0;
+    padding: .5em 1em;
+    height: 35px;
+    border: 0;
+    border-radius: 7px;
+    background-color: #181c2e;
+    color: #fff;
+    font-size: 1.1em;
+}
 @media screen and (max-width: 600px) {
     table{
         border: 0;
